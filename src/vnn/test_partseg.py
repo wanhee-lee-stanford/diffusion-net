@@ -12,7 +12,7 @@ import sys
 import importlib
 from tqdm import tqdm
 import numpy as np
-from pytorch3d.transforms import RotateAxisAngle, Rotate, random_rotations
+from transforms import RotateAxisAngle, Rotate, random_rotations
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = BASE_DIR
