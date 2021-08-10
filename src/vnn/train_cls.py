@@ -165,6 +165,7 @@ def main(args):
         scheduler.step()
         for batch_id, data in tqdm(enumerate(trainDataLoader, 0), total=len(trainDataLoader), smoothing=0.9):
             points, target = data
+            print(target.shape)
             
             trot = None
             if args.rot == 'z':
@@ -173,13 +174,18 @@ def main(args):
                 trot = Rotate(R=random_rotations(points.shape[0]))
             if trot is not None:
                 points = trot.transform_points(points)
-            
+
+            print(points.shape)
             points = points.data.numpy()
+            print(points.shape)
             points = provider.random_point_dropout(points)
+            print(points.shape)
             points[:,:, 0:3] = provider.random_scale_point_cloud(points[:,:, 0:3])
             points[:,:, 0:3] = provider.shift_point_cloud(points[:,:, 0:3])
             points = torch.Tensor(points)
             target = target[:, 0]
+            print(target.shape)
+            print(target)
 
             points = points.transpose(2, 1)
             points, target = points.cuda(), target.cuda()

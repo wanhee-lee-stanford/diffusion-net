@@ -52,3 +52,7 @@ tags
 *.exe
 *.out
 *.app
+
+# specify a folder with slash in the end
+# ignore all files in any directory named temp
+src/vnn/data
