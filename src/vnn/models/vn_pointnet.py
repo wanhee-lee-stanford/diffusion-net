@@ -73,27 +73,38 @@ class PointNetEncoder(nn.Module):
         B, D, N = x.size()
         
         x = x.unsqueeze(1)
+        print(x.shape, 'x.shape on vn_pointnet PointNetEncoder forward first unsqueeze')
         feat = get_graph_feature_cross(x, k=self.n_knn)
+        print(feat.shape, 'feat.shape on vn_pointnet PointNetEncoder forward after get_graph_feature_cross')
         x = self.conv_pos(feat)
+        print(x.shape, 'x.shape on vn_pointnet PointNetEncoder forward after conv_pos(feat)')
         x = self.pool(x)
+        print(x.shape, 'x.shape on vn_pointnet PointNetEncoder forward after pool(x)')
         
         x = self.conv1(x)
+        print(x.shape, 'x.shape on vn_pointnet PointNetEncoder forward after self.conv1')
         
         if self.feature_transform:
             x_global = self.fstn(x).unsqueeze(-1).repeat(1,1,1,N)
             x = torch.cat((x, x_global), 1)
-        
+
+        print(x.shape, 'x.shape on vn_pointnet after feature transform')
         pointfeat = x
         x = self.conv2(x)
         x = self.bn3(self.conv3(x))
+        print(x.shape, 'x.shape on vn_pointnet before x_mean torch cat')
         
         x_mean = x.mean(dim=-1, keepdim=True).expand(x.size())
         x = torch.cat((x, x_mean), 1)
         x, trans = self.std_feature(x)
+        print(x.shape, 'x.shape on vn_pointnet after std_feature')
+
         x = x.view(B, -1, N)
+        print(x.shape,'x.shape on vn_pointnet after x.view(B, -1, N)')
         
         x = torch.max(x, -1, keepdim=False)[0]
-        
+        print(x.shape, 'x.shape on vn_pointnet after torch.max(x, -1, keepdim=False)[0]')
+
         trans_feat = None
         if self.global_feat:
             return x, trans, trans_feat

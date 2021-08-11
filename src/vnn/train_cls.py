@@ -26,9 +26,11 @@ sys.path.append(os.path.join(ROOT_DIR, 'models'))
 def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser('PointNet')
-    parser.add_argument('--model', default='vn_dgcnn_cls', help='Model name [default: vn_dgcnn_cls]',
-                        choices = ['pointnet_cls', 'vn_pointnet_cls', 'dgcnn_cls', 'vn_dgcnn_cls'])
-    parser.add_argument('--batch_size', type=int, default=32, help='Batch size in training [default: 32]')
+    # parser.add_argument('--model', default='vn_dgcnn_cls', help='Model name [default: vn_dgcnn_cls]',
+    #                     choices = ['pointnet_cls', 'vn_pointnet_cls', 'dgcnn_cls', 'vn_dgcnn_cls'])
+    parser.add_argument('--model', default='vn_pointnet_cls', help='Model name [default: vn_dgcnn_cls]',
+                        choices=['pointnet_cls', 'vn_pointnet_cls', 'dgcnn_cls', 'vn_dgcnn_cls'])
+    parser.add_argument('--batch_size', type=int, default=2, help='Batch size in training [default: 32]')
     parser.add_argument('--epoch', default=250, type=int, help='Number of epoch in training [default: 250]')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='Initial learning rate (for SGD it is multiplied by 100) [default: 0.001]')
     parser.add_argument('--decay_rate', type=float, default=1e-4, help='Decay rate [default: 1e-4]')
@@ -165,7 +167,7 @@ def main(args):
         scheduler.step()
         for batch_id, data in tqdm(enumerate(trainDataLoader, 0), total=len(trainDataLoader), smoothing=0.9):
             points, target = data
-            print(target.shape)
+            print(target.shape, 'tran_cls.py target.shape')
             
             trot = None
             if args.rot == 'z':
@@ -175,11 +177,11 @@ def main(args):
             if trot is not None:
                 points = trot.transform_points(points)
 
-            print(points.shape)
+            print(points.shape, 'tran_cls.py point.shape')
             points = points.data.numpy()
-            print(points.shape)
+            print(points.shape, 'tran_cls.py point.shape')
             points = provider.random_point_dropout(points)
-            print(points.shape)
+            print(points.shape, 'tran_cls.py point.shape')
             points[:,:, 0:3] = provider.random_scale_point_cloud(points[:,:, 0:3])
             points[:,:, 0:3] = provider.shift_point_cloud(points[:,:, 0:3])
             points = torch.Tensor(points)

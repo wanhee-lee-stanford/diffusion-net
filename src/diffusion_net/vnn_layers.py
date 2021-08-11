@@ -118,7 +118,7 @@ class SpatialGradientFeatures(nn.Module):
         else:
             self.A = nn.Linear(self.C_inout, self.C_inout, bias=False)
 
-        VNLeakyReLU(dots)
+
         # self.norm = nn.InstanceNorm1d(C_inout)
 
     def forward(self, vectors):
@@ -155,20 +155,25 @@ class MiniMLP(nn.Sequential):
                 )
 
             # Affine map
-            self.add_module(
-                name + "_mlp_layer_{:03d}".format(i),
-                nn.Linear(
-                    layer_sizes[i],
-                    layer_sizes[i + 1],
-                ),
-            )
+            if not is_last:
+                self.add_module(
+                    name + "_mlp_layer_{:03d}".format(i),
+                    VNLinearLeakyReLU(
+                        layer_sizes[i],
+                        layer_sizes[i + 1],
+                        dim=3,
+                    ),
+                )
 
             # Nonlinearity
             # (but not on the last layer)
-            if not is_last:
+            if is_last:
                 self.add_module(
-                    name + "_mlp_act_{:03d}".format(i),
-                    activation()
+                    name + "_mlp_layer_{:03d}".format(i),
+                    VNLinear(
+                        layer_sizes[i],
+                        layer_sizes[i + 1],
+                    ),
                 )
 
 
@@ -276,7 +281,9 @@ class DiffusionNet(nn.Module):
 
         # Basic parameters
         self.C_in = C_in
+        print(C_in, 'C_in')
         self.C_out = C_out
+        print(C_out, 'C_out')
         self.C_width = C_width
         self.N_block = N_block
 
@@ -372,6 +379,7 @@ class DiffusionNet(nn.Module):
         
         # Apply the first linear layer
         x = self.first_lin(x_in)
+        print(x.shape,'first_lin(x_in)')
       
         # Apply each of the blocks
         for b in self.blocks:

@@ -8,6 +8,7 @@ import numpy as np
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../../src/"))  # add the path to the DiffusionNet src
 import diffusion_net
+from diffusion_net import vnn_layers
 from human_segmentation_original_dataset import HumanSegOrigDataset
 
 
@@ -16,7 +17,7 @@ from human_segmentation_original_dataset import HumanSegOrigDataset
 # Parse a few args
 parser = argparse.ArgumentParser()
 parser.add_argument("--evaluate", action="store_true", help="evaluate using the pretrained model")
-parser.add_argument("--input_features", type=str, help="what features to use as input ('xyz' or 'hks') default: hks", default = 'hks')
+parser.add_argument("--input_features", type=str, help="what features to use as input ('xyz' or 'hks') default: hks", default = 'xyz')
 args = parser.parse_args()
 
 
@@ -65,8 +66,9 @@ if train:
 # === Create the model
 
 C_in={'xyz':3, 'hks':16}[input_features] # dimension of input features
+print(C_in)
 
-model = diffusion_net.layers.DiffusionNet(C_in=C_in,
+model = diffusion_net.vnn_layers.DiffusionNet(C_in=C_in,
                                           C_out=n_class,
                                           C_width=128, 
                                           N_block=4, 
@@ -106,6 +108,7 @@ def train_epoch(epoch):
 
         # Get data
         verts, faces, frames, mass, L, evals, evecs, gradX, gradY, labels = data
+        print(verts.shape, 'verts: data shape')
 
         # Move to device
         verts = verts.to(device)
@@ -118,6 +121,13 @@ def train_epoch(epoch):
         gradX = gradX.to(device)
         gradY = gradY.to(device)
         labels = labels.to(device)
+        print(verts.shape, 'verts: device shape')
+        print(gradX.shape, 'gradX.shape')
+        print(L.shape, 'L.shape')
+        print(evals.shape, 'evals.shape')
+        print(evecs.shape, 'evecs.shape')
+        print(labels.shape, 'labels.shape')
+        print(mass.shape, 'mass.shape')
         
         # Randomly rotate positions
         if augment_random_rotate:

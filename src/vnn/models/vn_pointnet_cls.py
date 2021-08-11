@@ -22,11 +22,19 @@ class get_model(nn.Module):
         self.relu = nn.ReLU()
 
     def forward(self, x):
+        print(x.shape, 'shape before pointnet')
         x, trans, trans_feat = self.feat(x)
+        print(x.shape, 'self.feat(x) shape')
+        print(trans.shape, 'self.feat(trans) shape')
+        try:
+            print(trans_feat.shape, 'self.feat(trans_feat) shape')
+        except:
+            pass
         x = F.relu(self.bn1(self.fc1(x)))
         x = F.relu(self.bn2(self.dropout(self.fc2(x))))
         x = self.fc3(x)
         x = F.log_softmax(x, dim=1)
+        print(x.shape, 'vn_point_cls model output x.shape')
         return x, trans_feat
 
 class get_loss(torch.nn.Module):
