@@ -36,8 +36,8 @@ class get_model(nn.Module):
             self.pool = mean_pool
         
         self.fstn = STNkd(args, d=128//3)
-        
-        self.convs1 = torch.nn.Conv1d(9025, 256, 1)
+
+        self.convs1 = torch.nn.Conv1d(9009+1, 256, 1)
         self.convs2 = torch.nn.Conv1d(256, 256, 1)
         self.convs3 = torch.nn.Conv1d(256, 128, 1)
         self.convs4 = torch.nn.Conv1d(128, num_part, 1)
@@ -45,7 +45,7 @@ class get_model(nn.Module):
         self.bns2 = nn.BatchNorm1d(256)
         self.bns3 = nn.BatchNorm1d(128)
 
-    def forward(self, point_cloud, label):
+    def forward(self, point_cloud, label, faces, outputs_at='faces'):
         B, D, N = point_cloud.size()
         
         point_cloud = point_cloud.unsqueeze(1)
@@ -67,12 +67,13 @@ class get_model(nn.Module):
         out5 = torch.cat((out5, out5_mean), 1)
         out5, trans = self.std_feature(out5)
         out5 = out5.view(B, -1, N)
-        
+
+        print('here')
         out_max = torch.max(out5, -1, keepdim=False)[0]
 
         out_max = torch.cat([out_max,label.squeeze(1)],1)
-        expand = out_max.view(-1, 2048//3*6+16, 1).repeat(1, 1, N)
-        
+        expand = out_max.view(-1, 2048//3*6+1, 1).repeat(1, 1, N)
+
         out1234 = torch.cat((out1, out2, out3, out4), dim=1)
         out1234 = torch.einsum('bijm,bjkm->bikm', out1234, trans).view(B, -1, N)
         
@@ -85,6 +86,13 @@ class get_model(nn.Module):
         net = net.transpose(2, 1).contiguous()
         net = F.log_softmax(net.view(-1, self.num_part), dim=-1)
         net = net.view(B, N, self.num_part) # [B, N, 50]
+
+        if outputs_at == 'faces':
+            # Remap to faces
+            x_gather = net.unsqueeze(-1).expand(-1, -1, -1, 3)
+            faces_gather = faces.unsqueeze(2).expand(-1, -1, net.shape[-1], -1)
+            xf = torch.gather(x_gather, 1, faces_gather)
+            net = torch.mean(xf, dim=-1)
         
         trans_feat = None
         return net, trans_feat

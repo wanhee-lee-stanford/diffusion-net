@@ -118,6 +118,9 @@ def train_epoch(epoch):
         gradX = gradX.to(device)
         gradY = gradY.to(device)
         labels = labels.to(device)
+        labels = labels.long()
+        print(mass.shape, 'mass.shape')
+        print(labels.shape, 'labels.shape')
         
         # Randomly rotate positions
         if augment_random_rotate:
@@ -129,8 +132,12 @@ def train_epoch(epoch):
         elif input_features == 'hks':
             features = diffusion_net.geometry.compute_hks_autoscale(evals, evecs, 16)
 
+        print(features.shape, 'features.shape')
         # Apply the model
         preds = model(features, mass, L=L, evals=evals, evecs=evecs, gradX=gradX, gradY=gradY, faces=faces)
+
+        print(preds.shape, 'preds.shape')
+        print(labels.shape, 'labels.shape')
 
         # Evaluate loss
         loss = torch.nn.functional.nll_loss(preds, labels)
@@ -138,6 +145,7 @@ def train_epoch(epoch):
         
         # track accuracy
         pred_labels = torch.max(preds, dim=1).indices
+        print(pred_labels.shape, 'pred_labels.shape')
         this_correct = pred_labels.eq(labels).sum().item()
         this_num = labels.shape[0]
         correct += this_correct
@@ -176,6 +184,9 @@ def test():
             gradX = gradX.to(device)
             gradY = gradY.to(device)
             labels = labels.to(device)
+            labels = labels.long()
+            print(mass.shape, 'mass.shape test')
+            print(labels.shape,'labels.shape')
             
             # Construct features
             if input_features == 'xyz':

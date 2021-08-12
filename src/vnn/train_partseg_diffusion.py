@@ -17,6 +17,14 @@ from tqdm import tqdm
 import provider
 import numpy as np
 from pytorch3d.transforms import RotateAxisAngle, Rotate, random_rotations
+sys.path.append(os.path.join(os.path.dirname(__file__), "../../src/"))  # add the path to the DiffusionNet src
+sys.path.append(os.path.join(os.path.dirname(__file__), "C:/Users/whlee/Dropbox/PC/Documents/GitHub/diffusion-net/experiments/human_segmentation_original"))  # add the path dataset location
+import diffusion_net
+from diffusion_net import vnn_layers
+sys.path.append(os.path.join(os.path.dirname(__file__),
+                                 "../../src/"))  # add the path to the DiffusionNet src
+from human_segmentation_original_dataset import HumanSegOrigDataset
+from torch.utils.data import DataLoader
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = BASE_DIR
@@ -40,7 +48,7 @@ def parse_args():
     parser = argparse.ArgumentParser('Model')
     parser.add_argument('--model', default='vn_pointnet_partseg', help='Model name [default: vn_dgcnn_partseg]',
                         choices = ['pointnet_partseg', 'vn_pointnet_partseg', 'dgcnn_partseg', 'vn_dgcnn_partseg'])
-    parser.add_argument('--batch_size', type=int, default=4, help='Batch Size during training [default: 16]')
+    parser.add_argument('--batch_size', type=int, default=1, help='Batch Size during training [default: 16]')
     parser.add_argument('--epoch', default=250, type=int, help='Epoch to run [default: 250]')
     parser.add_argument('--learning_rate', default=0.001, type=float, help='Initial learning rate (for SGD it is multiplied by 100) [default: 0.001]')
     parser.add_argument('--decay_rate', type=float, default=1e-4, help='Weight decay [default: 1e-4]')
@@ -55,7 +63,14 @@ def parse_args():
                         choices=['aligned', 'z', 'so3'])
     parser.add_argument('--pooling', type=str, default='mean', help='VNN only: pooling method [default: mean]',
                         choices=['mean', 'max'])
-    parser.add_argument('--n_knn', default=40, type=int, help='Number of nearest neighbors to use, not applicable to PointNet [default: 20]')
+    parser.add_argument('--n_knn', default=10, type=int, help='Number of nearest neighbors to use, not applicable to PointNet [default: 20]')
+    parser.add_argument("--evaluate",
+                        action="store_true",
+                        help="evaluate using the pretrained model")
+    parser.add_argument("--input_features",
+                        type=str,
+                        help="what features to use as input ('xyz' or 'hks') default: hks",
+                        default='xyz')
     return parser.parse_args()
 
 def main(args):
@@ -94,16 +109,78 @@ def main(args):
     log_string('PARAMETER ...')
     log_string(args)
 
-    root = 'data/shapenetcore_partanno_segmentation_benchmark_v0_normal/'
 
-    TRAIN_DATASET = PartNormalDataset(root = root, npoints=args.npoint, split='trainval', normal_channel=args.normal)
-    trainDataLoader = torch.utils.data.DataLoader(TRAIN_DATASET, batch_size=args.batch_size,shuffle=True, num_workers=4)
-    TEST_DATASET = PartNormalDataset(root = root, npoints=args.npoint, split='test', normal_channel=args.normal)
-    testDataLoader = torch.utils.data.DataLoader(TEST_DATASET, batch_size=args.batch_size,shuffle=False, num_workers=4)
-    log_string("The number of training data is: %d" % len(TRAIN_DATASET))
-    log_string("The number of test data is: %d" %  len(TEST_DATASET))
-    num_classes = 16
-    num_part = 50
+
+    # === Options
+
+    # Parse a few args
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("--evaluate",
+    #                     action="store_true",
+    #                     help="evaluate using the pretrained model")
+    # parser.add_argument("--input_features",
+    #                     type=str,
+    #                     help="what features to use as input ('xyz' or 'hks') default: hks",
+    #                     default='xyz')
+    # args = parser.parse_args()
+
+    # system things
+    device = torch.device('cuda:0')
+    dtype = torch.float32
+
+    # problem/dataset things
+    n_class = 8
+
+    # model
+    input_features = args.input_features  # one of ['xyz', 'hks']
+    k_eig = 128
+
+    # Important paths
+    base_path = "C:/Users/whlee/Dropbox/PC/Documents/GitHub/diffusion-net/experiments/human_segmentation_original"
+    op_cache_dir = os.path.join(base_path,
+                                "data",
+                                "op_cache")
+    pretrain_path = os.path.join(base_path,
+                                 "pretrained_models/human_seg_{}_4x128.pth".format(input_features))
+    model_save_path = os.path.join(base_path,
+                                   "data/saved_models/human_seg_{}_4x128.pth".format(input_features))
+    dataset_path = os.path.join(base_path,
+                                "data/sig17_seg_benchmark")
+
+    # === Load datasets
+    # Load the test dataset
+    test_dataset = HumanSegOrigDataset(dataset_path,
+                                       train=False,
+                                       k_eig=k_eig,
+                                       use_cache=True,
+                                       op_cache_dir=op_cache_dir)
+    test_loader = DataLoader(test_dataset,
+                             batch_size=args.batch_size)
+
+    # Load the train dataset
+    train_dataset = HumanSegOrigDataset(dataset_path,
+                                        train=True,
+                                        k_eig=k_eig,
+                                        use_cache=True,
+                                        op_cache_dir=op_cache_dir)
+    train_loader = DataLoader(train_dataset,
+                                  batch_size=args.batch_size,
+                                  shuffle=True)
+
+    log_string("The number of training data is: %d" % len(train_dataset))
+    log_string("The number of test data is: %d" %  len(test_dataset))
+
+    # root = 'data/shapenetcore_partanno_segmentation_benchmark_v0_normal/'
+    #
+    # TRAIN_DATASET = PartNormalDataset(root = root, npoints=args.npoint, split='trainval', normal_channel=args.normal)
+    # trainDataLoader = torch.utils.data.DataLoader(TRAIN_DATASET, batch_size=args.batch_size,shuffle=True, num_workers=4)
+    # TEST_DATASET = PartNormalDataset(root = root, npoints=args.npoint, split='test', normal_channel=args.normal)
+    # testDataLoader = torch.utils.data.DataLoader(TEST_DATASET, batch_size=args.batch_size,shuffle=False, num_workers=4)
+    # log_string("The number of training data is: %d" % len(TRAIN_DATASET))
+    # log_string("The number of test data is: %d" %  len(TEST_DATASET))
+    num_classes = 1
+    num_part = 8
+
     '''MODEL LOADING'''
     MODEL = importlib.import_module(args.model)
 
@@ -170,16 +247,53 @@ def main(args):
         classifier = classifier.apply(lambda x: bn_momentum_adjust(x,momentum))
 
         '''learning one epoch'''
-        for i, data in tqdm(enumerate(trainDataLoader), total=len(trainDataLoader), smoothing=0.9):
-            points, label, target = data
+        #for i, data in tqdm(enumerate(trainDataLoader), total=len(trainDataLoader), smoothing=0.9):
+        for data in tqdm(train_loader):
+            # tqdm option : total = len(train_loader)
+            # points, label, target = data
 
-            print(points.shape, 'points.shape')
-            print(label.shape, 'label.shape')
-            print(label, 'label')
-            print(target.shape, 'target.shape')
-            print(target, 'target')
+            # Get data
+            verts, faces, frames, mass, L, evals, evecs, gradX, gradY, labels = data
+            print(verts.shape,
+                  'verts: data shape')
+            print(verts.type, 'verts.type')
+            print(labels.shape, 'labels.shape')
+            print(labels)
 
-            
+
+            points = verts
+            label = torch.tensor([[0]])
+            target = labels
+            # Move to device
+            verts = verts.to(device)
+            faces = faces.to(device)
+            frames = frames.to(device)
+            mass = mass.to(device)
+            L = L.to(device)
+            evals = evals.to(device)
+            evecs = evecs.to(device)
+            gradX = gradX.to(device)
+            gradY = gradY.to(device)
+            labels = labels.to(device)
+            label = label.to(device)
+            target = target.to(device)
+
+            print(verts.shape,
+                  'verts: device shape')
+            print(gradX.shape,
+                  'gradX.shape')
+            print(L.shape,
+                  'L.shape')
+            print(evals.shape,
+                  'evals.shape')
+            print(evecs.shape,
+                  'evecs.shape')
+            print(labels.shape,
+                  'labels.shape')
+            print(mass.shape,
+                  'mass.shape')
+
+
             trot = None
             if args.rot == 'z':
                 trot = RotateAxisAngle(angle=torch.rand(points.shape[0])*360, axis="Z", degrees=True)
@@ -197,17 +311,12 @@ def main(args):
             optimizer.zero_grad()
             classifier = classifier.train()
             print(label.shape, 'label.shape')
-            print(label, 'label')
             print(to_categorical(label, num_classes).shape, 'to_categorical.shape')
-            seg_pred, trans_feat = classifier(points, to_categorical(label, num_classes))
-            print(seg_pred.shape,
-                  'seg_pred.shape')
-            print(trans_feat,
-                  'trans_feat')
-            seg_pred = seg_pred.contiguous().view(-1,
-                                                  num_part)
-            print(seg_pred.shape,
-                  'seg_pred.shape after view')
+            seg_pred, trans_feat = classifier(points, to_categorical(label, num_classes), faces)
+            print(seg_pred.shape, 'seg_pred.shape')
+            print(trans_feat, 'trans_feat')
+            seg_pred = seg_pred.contiguous().view(-1, num_part)
+            print(seg_pred.shape, 'seg_pred.shape after view')
             target = target.view(-1, 1)[:, 0]
             pred_choice = seg_pred.data.max(1)[1]
             correct = pred_choice.eq(target.data).cpu().sum()
@@ -230,7 +339,7 @@ def main(args):
                 for label in seg_classes[cat]:
                     seg_label_to_cat[label] = cat
 
-            for batch_id, (points, label, target) in tqdm(enumerate(testDataLoader), total=len(testDataLoader), smoothing=0.9):
+            for batch_id, (points, label, target) in tqdm(enumerate(test_loader), total=len(test_loader), smoothing=0.9):
                 cur_batch_size, NUM_POINT, _ = points.size()
                 
                 trot = None

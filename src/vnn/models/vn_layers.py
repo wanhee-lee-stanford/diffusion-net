@@ -51,6 +51,7 @@ class VNLinearLeakyReLU(nn.Module):
         
         self.map_to_feat = nn.Linear(in_channels, out_channels, bias=False)
         self.batchnorm = VNBatchNorm(out_channels, dim=dim)
+        print(out_channels, 'VNLinearLeakyReLU out_channels')
         
         if share_nonlinearity == True:
             self.map_to_dir = nn.Linear(in_channels, 1, bias=False)
@@ -66,7 +67,7 @@ class VNLinearLeakyReLU(nn.Module):
         p = self.map_to_feat(x.transpose(1,-1)).transpose(1,-1)
         print(p.shape,'VNLinearLeakyReLU p.shape')
         # BatchNorm
-        p = self.batchnorm(p)
+        # p = self.batchnorm(p)
         print(p.shape,'shape after batchnorm')
         # LeakyReLU
         d = self.map_to_dir(x.transpose(1,-1)).transpose(1,-1)
@@ -122,7 +123,9 @@ class VNBatchNorm(nn.Module):
         x: point features of shape [B, N_feat, 3, N_samples, ...]
         '''
         # norm = torch.sqrt((x*x).sum(2))
-        norm = torch.norm(x, dim=2) + EPS
+        norm = torch.norm(x, dim=2, keepdim=False) + EPS
+        print(norm.shape, 'norm.shape')
+        # temp = norm.squeeze(2)
         norm_bn = self.bn(norm)
         norm = norm.unsqueeze(2)
         norm_bn = norm_bn.unsqueeze(2)
@@ -142,7 +145,8 @@ class VNMaxPool(nn.Module):
         '''
         d = self.map_to_dir(x.transpose(1,-1)).transpose(1,-1)
         dotprod = (x*d).sum(2, keepdims=True)
-        idx = dotprod.max(dim=-1, keepdim=False)[1]
+        print('here')
+        idx = dotprod.max(dim=-1, keepdim=False)[1] # this is very dangerous
         index_tuple = torch.meshgrid([torch.arange(j) for j in x.size()[:-1]]) + (idx,)
         x_max = x[index_tuple]
         return x_max

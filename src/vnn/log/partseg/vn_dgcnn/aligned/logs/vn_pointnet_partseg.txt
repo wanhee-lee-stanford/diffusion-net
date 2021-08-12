@@ -1,0 +1,346 @@
+2021-08-11 06:56:02,915 - Model - INFO - PARAMETER ...
+2021-08-11 06:56:02,915 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 06:56:17,073 - Model - INFO - The number of training data is: 381
+2021-08-11 06:56:17,073 - Model - INFO - The number of test data is: 18
+2021-08-11 06:56:20,283 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 06:56:20,298 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 06:56:20,298 - Model - INFO - Learning rate:0.001000
+2021-08-11 06:58:05,672 - Model - INFO - PARAMETER ...
+2021-08-11 06:58:05,672 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 06:58:17,079 - Model - INFO - The number of training data is: 381
+2021-08-11 06:58:17,079 - Model - INFO - The number of test data is: 18
+2021-08-11 06:58:20,193 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 06:58:20,193 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 06:58:20,193 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:12:32,406 - Model - INFO - PARAMETER ...
+2021-08-11 07:12:32,406 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:12:32,609 - Model - INFO - The number of training data is: 13998
+2021-08-11 07:12:32,609 - Model - INFO - The number of test data is: 2874
+2021-08-11 07:12:33,953 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:12:33,953 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:12:33,953 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:13:38,585 - Model - INFO - PARAMETER ...
+2021-08-11 07:13:38,585 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:13:49,694 - Model - INFO - The number of training data is: 381
+2021-08-11 07:13:49,694 - Model - INFO - The number of test data is: 18
+2021-08-11 07:13:51,214 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:13:51,214 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:13:51,214 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:24:12,857 - Model - INFO - PARAMETER ...
+2021-08-11 07:24:12,857 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:24:25,181 - Model - INFO - The number of training data is: 381
+2021-08-11 07:24:25,182 - Model - INFO - The number of test data is: 18
+2021-08-11 07:24:28,565 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:24:28,581 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:24:28,581 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:30:31,327 - Model - INFO - PARAMETER ...
+2021-08-11 07:30:31,327 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:30:44,721 - Model - INFO - The number of training data is: 381
+2021-08-11 07:30:44,721 - Model - INFO - The number of test data is: 18
+2021-08-11 07:30:46,650 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:30:46,650 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:30:46,650 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:33:42,263 - Model - INFO - PARAMETER ...
+2021-08-11 07:33:42,263 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:34:09,674 - Model - INFO - The number of training data is: 381
+2021-08-11 07:34:09,674 - Model - INFO - The number of test data is: 18
+2021-08-11 07:34:18,606 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:34:18,606 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:34:18,606 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:39:20,133 - Model - INFO - PARAMETER ...
+2021-08-11 07:39:20,133 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:39:31,340 - Model - INFO - The number of training data is: 381
+2021-08-11 07:39:31,340 - Model - INFO - The number of test data is: 18
+2021-08-11 07:39:32,702 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:39:32,702 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:39:32,702 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:40:37,772 - Model - INFO - PARAMETER ...
+2021-08-11 07:40:37,772 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:40:58,734 - Model - INFO - The number of training data is: 381
+2021-08-11 07:40:58,749 - Model - INFO - The number of test data is: 18
+2021-08-11 07:41:02,114 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:41:02,129 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:41:02,129 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:45:23,767 - Model - INFO - PARAMETER ...
+2021-08-11 07:45:23,767 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:45:34,778 - Model - INFO - The number of training data is: 381
+2021-08-11 07:45:34,778 - Model - INFO - The number of test data is: 18
+2021-08-11 07:45:36,637 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:45:36,653 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:45:36,653 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:45:51,841 - Model - INFO - PARAMETER ...
+2021-08-11 07:45:51,841 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:46:03,360 - Model - INFO - The number of training data is: 381
+2021-08-11 07:46:03,360 - Model - INFO - The number of test data is: 18
+2021-08-11 07:46:05,965 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:46:05,981 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:46:05,981 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:48:29,782 - Model - INFO - PARAMETER ...
+2021-08-11 07:48:29,782 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:48:41,002 - Model - INFO - The number of training data is: 381
+2021-08-11 07:48:41,002 - Model - INFO - The number of test data is: 18
+2021-08-11 07:48:42,418 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:48:42,418 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:48:42,418 - Model - INFO - Learning rate:0.001000
+2021-08-11 07:49:50,784 - Model - INFO - PARAMETER ...
+2021-08-11 07:49:50,784 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 07:50:02,348 - Model - INFO - The number of training data is: 381
+2021-08-11 07:50:02,348 - Model - INFO - The number of test data is: 18
+2021-08-11 07:50:03,605 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 07:50:03,605 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 07:50:03,605 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:40:20,939 - Model - INFO - PARAMETER ...
+2021-08-11 17:40:20,939 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:40:32,085 - Model - INFO - The number of training data is: 381
+2021-08-11 17:40:32,085 - Model - INFO - The number of test data is: 18
+2021-08-11 17:40:34,939 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:40:34,939 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:40:34,939 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:41:52,144 - Model - INFO - PARAMETER ...
+2021-08-11 17:41:52,144 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:42:09,398 - Model - INFO - The number of training data is: 381
+2021-08-11 17:42:09,415 - Model - INFO - The number of test data is: 18
+2021-08-11 17:42:14,518 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:42:14,559 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:42:14,559 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:42:38,148 - Model - INFO - PARAMETER ...
+2021-08-11 17:42:38,148 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:42:54,354 - Model - INFO - The number of training data is: 381
+2021-08-11 17:42:54,355 - Model - INFO - The number of test data is: 18
+2021-08-11 17:43:01,644 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:43:01,645 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:43:01,645 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:48:21,686 - Model - INFO - PARAMETER ...
+2021-08-11 17:48:21,686 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:48:34,135 - Model - INFO - The number of training data is: 381
+2021-08-11 17:48:34,135 - Model - INFO - The number of test data is: 18
+2021-08-11 17:48:39,688 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:48:39,689 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:48:39,689 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:49:01,650 - Model - INFO - PARAMETER ...
+2021-08-11 17:49:01,650 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:50:41,178 - Model - INFO - PARAMETER ...
+2021-08-11 17:50:41,178 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:50:52,618 - Model - INFO - The number of training data is: 381
+2021-08-11 17:50:52,619 - Model - INFO - The number of test data is: 18
+2021-08-11 17:50:54,287 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:50:54,288 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:50:54,289 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:52:59,648 - Model - INFO - PARAMETER ...
+2021-08-11 17:52:59,649 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:53:11,695 - Model - INFO - The number of training data is: 381
+2021-08-11 17:53:11,695 - Model - INFO - The number of test data is: 18
+2021-08-11 17:53:13,394 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:53:13,395 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:53:13,395 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:55:26,288 - Model - INFO - PARAMETER ...
+2021-08-11 17:55:26,289 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:55:32,464 - Model - INFO - The number of training data is: 381
+2021-08-11 17:55:32,464 - Model - INFO - The number of test data is: 18
+2021-08-11 17:55:33,888 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:55:33,889 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:55:33,889 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:55:55,807 - Model - INFO - PARAMETER ...
+2021-08-11 17:55:55,807 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:55:56,574 - Model - INFO - The number of training data is: 13998
+2021-08-11 17:55:56,574 - Model - INFO - The number of test data is: 2874
+2021-08-11 17:55:57,915 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:55:57,916 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:55:57,917 - Model - INFO - Learning rate:0.001000
+2021-08-11 17:58:50,721 - Model - INFO - PARAMETER ...
+2021-08-11 17:58:50,721 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 17:58:51,176 - Model - INFO - The number of training data is: 13998
+2021-08-11 17:58:51,176 - Model - INFO - The number of test data is: 2874
+2021-08-11 17:58:52,379 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 17:58:52,380 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 17:58:52,380 - Model - INFO - Learning rate:0.001000
+2021-08-11 18:14:24,259 - Model - INFO - PARAMETER ...
+2021-08-11 18:14:24,259 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:14:24,728 - Model - INFO - The number of training data is: 13998
+2021-08-11 18:14:24,729 - Model - INFO - The number of test data is: 2874
+2021-08-11 18:14:26,026 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 18:14:26,027 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 18:14:26,027 - Model - INFO - Learning rate:0.001000
+2021-08-11 18:16:22,446 - Model - INFO - PARAMETER ...
+2021-08-11 18:16:22,446 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:16:22,893 - Model - INFO - The number of training data is: 13998
+2021-08-11 18:16:22,893 - Model - INFO - The number of test data is: 2874
+2021-08-11 18:16:24,070 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 18:16:24,071 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 18:16:24,071 - Model - INFO - Learning rate:0.001000
+2021-08-11 18:16:58,429 - Model - INFO - PARAMETER ...
+2021-08-11 18:16:58,429 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:16:58,881 - Model - INFO - The number of training data is: 13998
+2021-08-11 18:16:58,882 - Model - INFO - The number of test data is: 2874
+2021-08-11 18:17:00,042 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 18:17:00,043 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 18:17:00,043 - Model - INFO - Learning rate:0.001000
+2021-08-11 18:17:44,301 - Model - INFO - PARAMETER ...
+2021-08-11 18:17:44,301 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:17:44,746 - Model - INFO - The number of training data is: 13998
+2021-08-11 18:17:44,747 - Model - INFO - The number of test data is: 2874
+2021-08-11 18:17:45,922 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 18:17:45,924 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 18:17:45,924 - Model - INFO - Learning rate:0.001000
+2021-08-11 18:21:07,192 - Model - INFO - PARAMETER ...
+2021-08-11 18:21:07,192 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:21:07,639 - Model - INFO - The number of training data is: 13998
+2021-08-11 18:21:07,639 - Model - INFO - The number of test data is: 2874
+2021-08-11 18:21:08,805 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 18:21:08,806 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 18:21:08,806 - Model - INFO - Learning rate:0.001000
+2021-08-11 18:32:23,883 - Model - INFO - PARAMETER ...
+2021-08-11 18:32:23,883 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:32:34,935 - Model - INFO - The number of training data is: 381
+2021-08-11 18:32:34,935 - Model - INFO - The number of test data is: 18
+2021-08-11 18:32:36,278 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 18:32:36,279 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 18:32:36,279 - Model - INFO - Learning rate:0.001000
+2021-08-11 18:35:05,986 - Model - INFO - PARAMETER ...
+2021-08-11 18:35:05,986 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:35:19,406 - Model - INFO - PARAMETER ...
+2021-08-11 18:35:19,407 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 18:35:28,580 - Model - INFO - The number of training data is: 381
+2021-08-11 18:35:28,580 - Model - INFO - The number of test data is: 18
+2021-08-11 18:35:29,979 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 18:35:29,980 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 18:35:29,980 - Model - INFO - Learning rate:0.001000
+2021-08-11 19:47:51,227 - Model - INFO - PARAMETER ...
+2021-08-11 19:47:51,228 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 19:47:57,163 - Model - INFO - The number of training data is: 381
+2021-08-11 19:47:57,164 - Model - INFO - The number of test data is: 18
+2021-08-11 19:47:58,589 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 19:47:58,590 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 19:47:58,590 - Model - INFO - Learning rate:0.001000
+2021-08-11 19:48:19,911 - Model - INFO - PARAMETER ...
+2021-08-11 19:48:19,912 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 19:48:24,290 - Model - INFO - The number of training data is: 381
+2021-08-11 19:48:24,290 - Model - INFO - The number of test data is: 18
+2021-08-11 19:48:25,535 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 19:48:25,537 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 19:48:25,537 - Model - INFO - Learning rate:0.001000
+2021-08-11 19:49:14,621 - Model - INFO - PARAMETER ...
+2021-08-11 19:49:14,621 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 19:49:18,512 - Model - INFO - The number of training data is: 381
+2021-08-11 19:49:18,513 - Model - INFO - The number of test data is: 18
+2021-08-11 19:49:37,430 - Model - INFO - PARAMETER ...
+2021-08-11 19:49:37,430 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 19:49:39,211 - Model - INFO - The number of training data is: 381
+2021-08-11 19:49:39,211 - Model - INFO - The number of test data is: 18
+2021-08-11 19:49:40,482 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 19:49:40,483 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 19:49:40,483 - Model - INFO - Learning rate:0.001000
+2021-08-11 19:50:56,619 - Model - INFO - PARAMETER ...
+2021-08-11 19:50:56,619 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 19:51:00,509 - Model - INFO - The number of training data is: 381
+2021-08-11 19:51:00,509 - Model - INFO - The number of test data is: 18
+2021-08-11 19:51:02,099 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 19:51:02,101 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 19:51:02,101 - Model - INFO - Learning rate:0.001000
+2021-08-11 19:52:14,631 - Model - INFO - PARAMETER ...
+2021-08-11 19:52:14,632 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 19:52:19,720 - Model - INFO - The number of training data is: 381
+2021-08-11 19:52:19,721 - Model - INFO - The number of test data is: 18
+2021-08-11 19:52:20,988 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 19:52:20,989 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 19:52:20,989 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:08:31,412 - Model - INFO - PARAMETER ...
+2021-08-11 20:08:31,412 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:08:32,242 - Model - INFO - The number of training data is: 13998
+2021-08-11 20:08:32,242 - Model - INFO - The number of test data is: 2874
+2021-08-11 20:08:33,472 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:08:33,473 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:08:33,473 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:09:14,967 - Model - INFO - PARAMETER ...
+2021-08-11 20:09:14,967 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:09:23,199 - Model - INFO - The number of training data is: 381
+2021-08-11 20:09:23,199 - Model - INFO - The number of test data is: 18
+2021-08-11 20:09:24,582 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:09:24,583 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:09:24,583 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:15:12,009 - Model - INFO - PARAMETER ...
+2021-08-11 20:15:12,010 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:15:22,890 - Model - INFO - The number of training data is: 381
+2021-08-11 20:15:22,890 - Model - INFO - The number of test data is: 18
+2021-08-11 20:15:24,262 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:15:24,264 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:15:24,264 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:16:57,025 - Model - INFO - PARAMETER ...
+2021-08-11 20:16:57,025 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:17:04,360 - Model - INFO - The number of training data is: 381
+2021-08-11 20:17:04,360 - Model - INFO - The number of test data is: 18
+2021-08-11 20:17:06,171 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:17:06,172 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:17:06,172 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:17:44,799 - Model - INFO - PARAMETER ...
+2021-08-11 20:17:44,799 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:17:49,651 - Model - INFO - The number of training data is: 381
+2021-08-11 20:17:49,652 - Model - INFO - The number of test data is: 18
+2021-08-11 20:17:50,905 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:17:50,906 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:17:50,907 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:19:15,604 - Model - INFO - PARAMETER ...
+2021-08-11 20:19:15,605 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:19:20,344 - Model - INFO - The number of training data is: 381
+2021-08-11 20:19:20,344 - Model - INFO - The number of test data is: 18
+2021-08-11 20:19:21,677 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:19:21,679 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:19:21,679 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:23:30,833 - Model - INFO - PARAMETER ...
+2021-08-11 20:23:30,833 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:23:39,571 - Model - INFO - The number of training data is: 381
+2021-08-11 20:23:39,571 - Model - INFO - The number of test data is: 18
+2021-08-11 20:23:41,290 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:23:41,291 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:23:41,292 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:25:58,214 - Model - INFO - PARAMETER ...
+2021-08-11 20:25:58,214 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:25:58,752 - Model - INFO - The number of training data is: 13998
+2021-08-11 20:25:58,752 - Model - INFO - The number of test data is: 2874
+2021-08-11 20:26:00,046 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:26:00,047 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:26:00,047 - Model - INFO - Learning rate:0.001000
+2021-08-11 20:27:28,561 - Model - INFO - PARAMETER ...
+2021-08-11 20:27:28,562 - Model - INFO - Namespace(batch_size=4, decay_rate=0.0001, epoch=250, gpu='0', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=40, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 20:27:29,008 - Model - INFO - The number of training data is: 13998
+2021-08-11 20:27:29,009 - Model - INFO - The number of test data is: 2874
+2021-08-11 20:27:30,234 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 20:27:30,235 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 20:27:30,235 - Model - INFO - Learning rate:0.001000
+2021-08-11 21:24:24,330 - Model - INFO - PARAMETER ...
+2021-08-11 21:24:24,330 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 21:24:26,269 - Model - INFO - The number of training data is: 381
+2021-08-11 21:24:26,270 - Model - INFO - The number of test data is: 18
+2021-08-11 21:24:27,508 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 21:24:27,510 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 21:24:27,510 - Model - INFO - Learning rate:0.001000
+2021-08-11 21:24:55,032 - Model - INFO - PARAMETER ...
+2021-08-11 21:24:55,032 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 21:24:58,063 - Model - INFO - The number of training data is: 381
+2021-08-11 21:24:58,063 - Model - INFO - The number of test data is: 18
+2021-08-11 21:24:59,265 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 21:24:59,267 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 21:24:59,267 - Model - INFO - Learning rate:0.001000
+2021-08-11 21:25:20,038 - Model - INFO - PARAMETER ...
+2021-08-11 21:25:20,038 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 21:25:24,299 - Model - INFO - The number of training data is: 381
+2021-08-11 21:25:24,299 - Model - INFO - The number of test data is: 18
+2021-08-11 21:25:25,528 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 21:25:25,529 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 21:25:25,529 - Model - INFO - Learning rate:0.001000
+2021-08-11 21:25:59,210 - Model - INFO - PARAMETER ...
+2021-08-11 21:25:59,210 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 21:26:03,389 - Model - INFO - The number of training data is: 381
+2021-08-11 21:26:03,390 - Model - INFO - The number of test data is: 18
+2021-08-11 21:26:04,593 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 21:26:04,595 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 21:26:04,595 - Model - INFO - Learning rate:0.001000
+2021-08-11 21:28:00,941 - Model - INFO - Train accuracy is: 4.15784
+2021-08-11 21:29:34,569 - Model - INFO - PARAMETER ...
+2021-08-11 21:29:34,569 - Model - INFO - Namespace(batch_size=1, decay_rate=0.0001, epoch=250, evaluate=False, gpu='0', input_features='xyz', learning_rate=0.001, log_dir='vn_dgcnn/aligned', lr_decay=0.5, model='vn_pointnet_partseg', n_knn=10, normal=False, npoint=2048, optimizer='SGD', pooling='mean', rot='aligned', step_size=20)
+2021-08-11 21:29:40,358 - Model - INFO - The number of training data is: 381
+2021-08-11 21:29:40,359 - Model - INFO - The number of test data is: 18
+2021-08-11 21:29:41,861 - Model - INFO - No existing model, starting training from scratch...
+2021-08-11 21:29:41,862 - Model - INFO - Epoch 1 (1/250):
+2021-08-11 21:29:41,862 - Model - INFO - Learning rate:0.001000
+2021-08-11 21:31:37,847 - Model - INFO - Train accuracy is: 4.74467
